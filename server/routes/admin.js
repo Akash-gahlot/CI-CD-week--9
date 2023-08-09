@@ -17,7 +17,7 @@ router.get("/me", authenticateJwt, async (req, res) => {
         username: admin.username
     })
 });
-router.post("/", (req,resp) => { 
+router.post("/check", (req,resp) => { 
   resp.send("Welcome to EC2 instance");
 })
 router.post('/signup', (req, res) => {
