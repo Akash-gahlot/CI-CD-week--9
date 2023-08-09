@@ -1,0 +1,22 @@
+name: deploy code
+
+on:
+  push:
+    branches: -master
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+  steps:
+    - name: clone code
+      uses: actions/checkout@v2
+
+    - name: SSH and deploy
+      env:
+      EC2_PRIVATE_KEY: ${{secrets.EC2_PRIVATE_KEY}}
+      run: |
+        echo "$EC2_PRIVATE_KEY" > keyfile
+        chmod 600 keyfile
+        ssh -i keyfile ubuntu@ec2-13-51-171-112.eu-north-1.compute.amazonaws.com
+
