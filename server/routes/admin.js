@@ -20,6 +20,9 @@ router.get("/me", authenticateJwt, async (req, res) => {
 router.post("/check", (req,resp) => { 
   resp.send("Welcome to AWS");
 })
+router.get("/name", (req, resp) => { 
+  resp.send("My name is akash");
+})
 router.post('/signup', (req, res) => {
     const { username, password } = req.body;
     function callback(admin) {
