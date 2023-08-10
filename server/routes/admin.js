@@ -18,7 +18,7 @@ router.get("/me", authenticateJwt, async (req, res) => {
     })
 });
 router.post("/check", (req,resp) => { 
-  resp.send("Welcome to EC2");
+  resp.send("Welcome to EC2 machine");
 })
 router.post('/signup', (req, res) => {
     const { username, password } = req.body;
