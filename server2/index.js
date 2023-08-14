@@ -7,7 +7,7 @@ app.get("/name", (req, resp) => {
 });
 
 app.get("/EC2", (req, resp) => { 
-    resp.send("I am up over AWS  instance of akash gahlot ");
+    resp.send("I am up over AWS  instance of  gahlot ");
 })
 app.listen(PORT, () => { 
     console.log("Server is up on PORT : " + PORT);    
